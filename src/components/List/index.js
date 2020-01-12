@@ -13,11 +13,11 @@ function List() {
     if (searchValue !== '') {
       axios.get(`https://api.teleport.org/api/cities/?search=${searchValue}`)
         .then(res => {
-          const citiesList = res.data;
-          setCitiesList({ citiesList });
+          const citiesList = res.data
+          setCitiesList({ citiesList })
         })
     } else {
-      setCitiesList([]);
+      setCitiesList([])
     }
   }, [])
 

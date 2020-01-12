@@ -16,10 +16,10 @@ function Search() {
     async function fetchData() {
       const result = await axios.get(
         `https://api.teleport.org/api/cities/geonameid:${searchValue}`,
-      );
+      )
       setCityList(result.data)
     }
-    fetchData();
+    fetchData()
   }, [])
 
   const saveChanges = () => {
@@ -134,7 +134,6 @@ function Search() {
 
   return (
     <Fragment>
-      {console.log(cityList)}
       {_.size(cityList.error) || _.isEmpty(cityList)
         ? <p>This city was not find.</p>
         : renderCityInfo(cityList)

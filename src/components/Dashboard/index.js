@@ -11,8 +11,8 @@ function Dashboard() {
     setSearchValue(value)
     axios.get(`https://api.teleport.org/api/cities/?search=${value}`)
     .then(res => {
-      const citiesList = res.data;
-      setCitiesList({ citiesList });
+      const citiesList = res.data
+      setCitiesList({ citiesList })
     })
   }
 
@@ -44,7 +44,7 @@ function Dashboard() {
             onChange={(e) => change(e.target.value)}
           />
         </div>
-        <div className="col-lg-2">
+        <div>
           <Link to={`/list?search=${searchValue}`} className="btn btn-primary">
             Search
           </Link>
